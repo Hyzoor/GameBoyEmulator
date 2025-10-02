@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/GameBoyEmu.dir/src/main.cpp.o -o GameBoyEmu 

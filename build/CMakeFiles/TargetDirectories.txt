@@ -1,0 +1,3 @@
+/home/userhyzoor/DevProjects/GameBoyEmu/build/CMakeFiles/test1.dir
+/home/userhyzoor/DevProjects/GameBoyEmu/build/CMakeFiles/edit_cache.dir
+/home/userhyzoor/DevProjects/GameBoyEmu/build/CMakeFiles/rebuild_cache.dir

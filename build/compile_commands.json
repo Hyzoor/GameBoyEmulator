@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/userhyzoor/DevProjects/GameBoyEmu/build",
+  "command": "/usr/bin/c++  -I/home/userhyzoor/DevProjects/GameBoyEmu/include -g -o CMakeFiles/test1.dir/src/main.cpp.o -c /home/userhyzoor/DevProjects/GameBoyEmu/src/main.cpp",
+  "file": "/home/userhyzoor/DevProjects/GameBoyEmu/src/main.cpp",
+  "output": "CMakeFiles/test1.dir/src/main.cpp.o"
+}
+]
