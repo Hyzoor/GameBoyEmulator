@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/test1.dir/src/instructionSet.cpp.o CMakeFiles/test1.dir/src/main.cpp.o -o test1 
