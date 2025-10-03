@@ -129,6 +129,30 @@ test1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/build
 .PHONY : test1/fast
 
+src/instructionSet.o: src/instructionSet.cpp.o
+.PHONY : src/instructionSet.o
+
+# target to build an object file
+src/instructionSet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/src/instructionSet.cpp.o
+.PHONY : src/instructionSet.cpp.o
+
+src/instructionSet.i: src/instructionSet.cpp.i
+.PHONY : src/instructionSet.i
+
+# target to preprocess a source file
+src/instructionSet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/src/instructionSet.cpp.i
+.PHONY : src/instructionSet.cpp.i
+
+src/instructionSet.s: src/instructionSet.cpp.s
+.PHONY : src/instructionSet.s
+
+# target to generate assembly for a file
+src/instructionSet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test1.dir/build.make CMakeFiles/test1.dir/src/instructionSet.cpp.s
+.PHONY : src/instructionSet.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test1"
+	@echo "... src/instructionSet.o"
+	@echo "... src/instructionSet.i"
+	@echo "... src/instructionSet.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
