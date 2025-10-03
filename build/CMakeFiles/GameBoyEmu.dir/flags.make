@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/userhyzoor/DevProjects/GameBoyEmu/include
+CXX_INCLUDES = -I/home/userhyzoor/DevProjects/GameBoyEmu/include -I/home/userhyzoor/DevProjects/GameBoyEmu/build/_deps/json-src/include
 
-CXX_FLAGS = -g
+CXX_FLAGS = -g -std=gnu++20
 

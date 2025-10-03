@@ -195,7 +195,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=test1
+CMAKE_PROJECT_NAME:STATIC=GameBoyEmu
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1.0
@@ -297,6 +297,15 @@ FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 //Enables UPDATE_DISCONNECTED behavior just for population of json
 FETCHCONTENT_UPDATES_DISCONNECTED_JSON:BOOL=OFF
 
+//Value Computed by CMake
+GameBoyEmu_BINARY_DIR:STATIC=/home/userhyzoor/DevProjects/GameBoyEmu/build
+
+//Value Computed by CMake
+GameBoyEmu_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+GameBoyEmu_SOURCE_DIR:STATIC=/home/userhyzoor/DevProjects/GameBoyEmu
+
 //Build the unit tests when BUILD_TESTING is enabled.
 JSON_BuildTests:BOOL=OFF
 
@@ -338,15 +347,6 @@ nlohmann_json_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 nlohmann_json_SOURCE_DIR:STATIC=/home/userhyzoor/DevProjects/GameBoyEmu/build/_deps/json-src
-
-//Value Computed by CMake
-test1_BINARY_DIR:STATIC=/home/userhyzoor/DevProjects/GameBoyEmu/build
-
-//Value Computed by CMake
-test1_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-test1_SOURCE_DIR:STATIC=/home/userhyzoor/DevProjects/GameBoyEmu
 
 
 ########################

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10.0)
 
-project(test1 VERSION 0.1.0 LANGUAGES C CXX)
+project(GameBoyEmu VERSION 0.1.0 LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Busca todos los archivos .cpp en el directorio raíz
 file(GLOB SOURCES "src/*.cpp")

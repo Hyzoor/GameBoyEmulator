@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "definitions.h"
 
 struct Operand {
     std::string name;
@@ -21,7 +22,9 @@ struct Instruction {
     Flags flags;
 };
 
-static const std::vector<Instruction> instructionSet;
+inline std::vector<Instruction> unprefixedInstructions;
+inline std::vector<Instruction> cbprefixedInstructions;
 
 void initializeInstructionSet();
+void getInstructionsFromJson(const Json&, std::vector<Instruction> &);
 

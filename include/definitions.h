@@ -8,5 +8,5 @@ using u16 = uint16_t;
 using s8 = int8_t;
 using s16 = int16_t;
 
-using json = nlohmann::json;
+using Json = nlohmann::json;
 
