@@ -2,14 +2,18 @@
 #include <fstream>
 #include "definitions.h"
 #include "instructionSet.h"
+#include "CPU.h"
+#include "registerPair.h"
 
-int main(){
+int main() {
 
     initializeInstructionSet();
 
+    CPU prueba;
+    u16 u = 0xF0F1;
+    prueba.AF.setValue(u);
 
-
-    return 0;
+    std::cout <<(int)prueba.A << " " << (int)prueba.F << std::endl;
 }
 
 
