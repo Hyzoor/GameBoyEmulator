@@ -10,10 +10,8 @@ int main() {
     initializeInstructionSet();
 
     CPU prueba;
-    u16 u = 0xF0F1;
-    prueba.AF.setValue(u);
-
-    std::cout <<(int)prueba.A << " " << (int)prueba.F << std::endl;
+    prueba.loadRom("../resources/roms/dmg_boot.bin");
+    
 }
 
 

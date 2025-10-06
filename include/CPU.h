@@ -11,21 +11,34 @@ public:
 CPU();
 
 void fetchOpcode();
-void execInstruction(const u8 opcode);
+void execInstruction(u8 opcode);
+void mainLoop();
 
-// private:
+void loadRom(const std::string& romPath);
+
+
+private:
 
 // CPU Registers
 u8 A,B,C,D,E,F,H,L; 
 u16 SP,PC;
 
-//Pairs of registers: they point to original registers
+//Virtual registers: they point to original registers
 RegisterPair AF, BC, DE, HL;
 
+// Opcode actual instruction
 u8 opcode;
 
+// Rom
+u8 memoryArray [8192];
+
+
+
 // Instructions
-void load(u8 data, u8 destination);
+
+// 8-bit Loads
+void load(u8& destination, u8 data);
+
 
 
 
