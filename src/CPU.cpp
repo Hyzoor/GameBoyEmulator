@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 #include "CPU.h"
 #include "definitions.h"
 #include "instructionSet.h"
@@ -25,27 +26,29 @@ void CPU::loadRom(const std::string& romPath){
     }
 }
 
-void CPU::mainLoop(){
+void CPU::step(){
     fetchInstruction();
     exec(instruction);
 
+    std::cout<< instruction.mnemonic << '\n';
     // Add PC + instruction length
     PC += instruction.bytes;
 }
 
 void CPU::fetchInstruction(){
-    u8 opcode = memoryArray[PC++];
+    u8 opcode = memoryArray[PC];
 
     if(opcode == 0xCB) {
-        opcode = memoryArray[PC++];
+        PC++;
+        opcode = memoryArray[PC];
         instruction = cbprefixedInstructions[opcode];}
     else {
         instruction = unprefixedInstructions[opcode];}
 }
 
 void CPU::exec(const Instruction &instruction){
-
-    
+    if(instruction.execute != nullptr) {(this->*instruction.execute)();}
+    else {std::cout<< "Error funcion con opcode" << instruction.opcode << "no tiene funcion";}
 }
 
 void CPU::load(u8& destination, u8 data){

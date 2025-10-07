@@ -13,7 +13,7 @@ using OpFn = void (CPU::*)();
 
 void fetchInstruction();
 void exec(const Instruction&);
-void mainLoop();
+void step();
 
 void loadRom(const std::string& romPath);
 
@@ -36,7 +36,7 @@ OpFn opcodeCBFunctions[256];
 
 
 // Rom
-u8 memoryArray [8192];
+u8 memoryArray [65536];
 
 
 
