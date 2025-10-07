@@ -3,14 +3,9 @@
 #include <format>
 #include "instructionSet.h"
 #include "definitions.h"
+#include "CPU.h"
 
 #include <iostream>
-
-void from_json(const Json& json, Operand& operand) {
-    operand.name = json.value("name", "");        
-    operand.bytes = json.value("bytes", 0);       
-    operand.immediate = json.value("immediate", false);
-};
 
 void from_json(const Json& json, Flags& flags) {
     json.at("Z").get_to(flags.Z);
@@ -26,22 +21,24 @@ void initializeInstructionSet(){
     Json unprefixedJson = data["unprefixed"];
     Json cbprefixedJson = data["cbprefixed"];
 
-    getInstructionsFromJson(unprefixedJson, unprefixedInstructions);
-    getInstructionsFromJson(cbprefixedJson, cbprefixedInstructions);
+    getInstructionDataFromJson(unprefixedJson, unprefixedInstructions);
+    getInstructionDataFromJson(cbprefixedJson, cbprefixedInstructions);
 
 };
 
-void getInstructionsFromJson(const Json &json, std::vector<Instruction> &instructions){
-
+void getInstructionDataFromJson(const Json &json, std::vector<Instruction> &instructions){
     for(auto& [key, element]: json.items()){
 
+        u8 opcode = static_cast<u8>(std::stoul(key, nullptr, 16));
+
         Instruction instruction = {
+            opcode,
             element.value("mnemonic", "Invalid opcode"),
             element.value("bytes", 0),
             element["cycles"].at(0),
-            element["operands"],
             element["immediate"],
-            element["flags"]
+            element["flags"],
+            nullptr
         };
 
         instructions.push_back(instruction);

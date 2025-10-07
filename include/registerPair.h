@@ -1,9 +1,6 @@
 #pragma once
 #include "definitions.h"
 
-
-
-
 class RegisterPair{
 
 public:
@@ -14,6 +11,8 @@ u8 getLowValue();
 u8 getHighValue();
 u16 getValue();
 void setValue(u16);
+void decrement();
+void increment();
 
 private:
 

@@ -3,28 +3,25 @@
 #include <vector>
 #include "definitions.h"
 
-struct Operand {
-    std::string name;
-    int bytes;
-    bool immediate;
-};
-
 struct Flags {
     std::string Z, N, H, C; 
 };
 
+class CPU;
+
 struct Instruction {
+    u8 opcode;
     std::string mnemonic;
     int bytes;
     int cycles;
-    std::vector<Operand> operands;
     bool immediate;
     Flags flags;
+    void (CPU::*execute)();
 };
 
 inline std::vector<Instruction> unprefixedInstructions;
 inline std::vector<Instruction> cbprefixedInstructions;
 
 void initializeInstructionSet();
-void getInstructionsFromJson(const Json&, std::vector<Instruction> &);
+void getInstructionDataFromJson(const Json&, std::vector<Instruction> &);
 

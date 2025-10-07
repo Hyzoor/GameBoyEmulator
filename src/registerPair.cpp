@@ -12,8 +12,7 @@ u8 RegisterPair::getHighValue(){
 };
 
 u16 RegisterPair::getValue(){
-    u16 value = highByte << 8;
-    value += lowByte;
+    u16 value = (highByte << 8) | lowByte;
     return value;
 };
 
@@ -26,5 +25,19 @@ void RegisterPair::setValue(u16 word){
     lowByte = low;
     highByte = high;
 
-    // lowByte = 0xFA;
+};
+
+void RegisterPair::decrement(){
+
+    u16 actual = getValue();
+    actual--;
+    setValue(actual);
+
+};
+
+void RegisterPair::increment(){
+    
+    u16 actual = getValue();
+    actual++;
+    setValue(actual);
 };

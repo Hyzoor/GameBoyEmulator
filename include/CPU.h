@@ -1,8 +1,7 @@
 #pragma once
 #include "definitions.h"
 #include "registerPair.h"
-
-
+#include "instructionSet.h"
 
 class CPU {
 
@@ -10,8 +9,10 @@ public:
 
 CPU();
 
-void fetchOpcode();
-void execInstruction(u8 opcode);
+using OpFn = void (CPU::*)();
+
+void fetchInstruction();
+void exec(const Instruction&);
 void mainLoop();
 
 void loadRom(const std::string& romPath);
@@ -26,19 +27,30 @@ u16 SP,PC;
 //Virtual registers: they point to original registers
 RegisterPair AF, BC, DE, HL;
 
-// Opcode actual instruction
-u8 opcode;
+// Actual instruction
+Instruction instruction;
+
+// Function Pointers Tables
+OpFn opcodeFunctions[256];
+OpFn opcodeCBFunctions[256];
+
 
 // Rom
 u8 memoryArray [8192];
 
 
 
-// Instructions
-
 // 8-bit Loads
 void load(u8& destination, u8 data);
 
+// 16-bit Loads
+void load(u16& destination, u16 data);
+
+
+
+// Mapping pointers table with functions
+void initializePointerTables();
+void mapPointerTables();
 
 
 
@@ -81,3 +93,6 @@ void load(u8& destination, u8 data);
     
 
 };
+
+
+
